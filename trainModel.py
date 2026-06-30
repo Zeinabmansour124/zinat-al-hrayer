@@ -1,3 +1,5 @@
+import joblib
+from micromlgen import port
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -18,5 +20,9 @@ model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
-print(f"Précision : {accuracy * 100:.2f}%")
-print(confusion_matrix(y_test, y_pred))
+joblib.dump(model, "pesticide_model.pkl")
+model = joblib.load("pesticide_model.pkl")
+c_code = port(model)
+with open("model.h", "w") as f:
+    f.write(c_code)
+ 
