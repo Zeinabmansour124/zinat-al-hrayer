@@ -86,16 +86,20 @@ Economic Impact
 One station (164 TND) protects 20-50 women daily. One pesticide poisoning treatment costs 500-2,000 TND. Cost per woman protected per year: less than 10 TND.
 
 Built With
+
 Hardware: ESP32, MQ-135, MQ-3, PIR HC-SR501, DFPlayer Mini
 Firmware: Arduino IDE, C++
 AI: Python, scikit-learn, micromlgen
 Simulation: Wokwi
 Standards: NIOSH TWA, EPA REI
+
 Future Vision
+
 Link station data to governmental organizations defending women's rights
 SMS notification service to field supervisors (not individual workers — to avoid digital inequality)
 First documented pesticide exposure dataset in Tunisian agricultural zones
 Optional mobile app for supervisors and health officials (v3)
+
 License
 
 This project is source-available. It is **NOT** open-source. 
@@ -103,6 +107,16 @@ This project is source-available. It is **NOT** open-source.
 You may view and modify the code for personal, non-commercial use. However, **deployment, distribution, or any commercial use is strictly prohibited**.
 
 See the LICENSE file for the full terms.
+
+Links
+
+-  Email: zyntalhrayr@gmail.com
+- facebook : https://www.facebook.com/profile.php?id=61593436598421
+- Instagram: https://www.instagram.com/zyntalhrayr/
+- YouTubr : www.youtube.com/@zyntalhrayer
+
+
+
 
 
 Built for the women who feed Tunisia and deserve to come home safe every evening.
