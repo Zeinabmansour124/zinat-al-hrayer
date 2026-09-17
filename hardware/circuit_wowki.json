@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "author": "Shubham Verma",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -124.8,
+      "left": -119.96,
+      "attrs": {}
+    },
+    { "type": "chip-mq135", "id": "chip1", "top": 145.02, "left": -72, "attrs": {} },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": -45.3, "left": -473, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -34.45,
+      "left": -259.2,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "chip-playermini", "id": "chip2", "top": -66.18, "left": 81.6, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -151.2,
+      "left": 289.8,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -245.6,
+      "left": -420.18,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "chip1:VCC", "esp:5V", "red", [ "h0" ] ],
+    [ "gas1:VCC", "esp:5V", "red", [ "v75.9" ] ],
+    [ "chip2:VCC", "esp:5V", "red", [ "h-28.8", "v153.6", "h-124.95" ] ],
+    [ "chip2:RX", "esp:17", "purple", [ "h-19.2", "v48" ] ],
+    [ "chip2:TX", "esp:16", "white", [ "v48" ] ],
+    [ "chip2:GND", "esp:GND.2", "black", [ "h30.61", "v-57.6" ] ],
+    [ "bz1:1", "chip2:GND", "black", [ "v0" ] ],
+    [ "bz1:2", "chip2:OUT", "cyan", [ "v0" ] ],
+    [ "r3:2", "esp:33", "green", [ "v0" ] ],
+    [ "gas1:GND", "esp:GND.1", "black", [ "h211.2", "v37.6" ] ],
+    [ "chip1:GND", "esp:GND.3", "black", [ "h0" ] ],
+    [ "r3:1", "gas1:AOUT", "green", [ "v0" ] ],
+    [ "chip1:AOUT", "esp:35", "green", [ "h-96", "v-220.8" ] ],
+    [ "esp:3V3", "pir1:VCC", "red", [ "h0" ] ],
+    [ "pir1:GND", "esp:GND.2", "black", [ "h345.34" ] ],
+    [ "pir1:OUT", "esp:34", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
